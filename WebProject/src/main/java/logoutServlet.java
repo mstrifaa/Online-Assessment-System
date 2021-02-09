@@ -19,7 +19,7 @@ public class logoutServlet extends HttpServlet {
         if(session!=null){
             try{
                 Class.forName("oracle.jdbc.driver.OracleDriver");
-                Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
+                Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
                 String username = session.getAttribute("currentUser").toString();
 
                 System.out.println(username);
