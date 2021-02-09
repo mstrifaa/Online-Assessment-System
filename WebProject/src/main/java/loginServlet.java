@@ -19,7 +19,7 @@ public class loginServlet extends HttpServlet {
 
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
 
             PreparedStatement verifyUser = connection.prepareStatement("select username from users where username=? and password=?");
 
