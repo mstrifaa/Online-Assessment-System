@@ -18,6 +18,10 @@
         <servlet-name>logoutServlet</servlet-name>
         <servlet-class>logoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>quizController</servlet-name>
+        <servlet-class>quizController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
@@ -30,5 +34,9 @@
     <servlet-mapping>
         <servlet-name>logoutServlet</servlet-name>
         <url-pattern>/logoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>quizController</servlet-name>
+        <url-pattern>/quizController</url-pattern>
     </servlet-mapping>
 </web-app>

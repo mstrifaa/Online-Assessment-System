@@ -22,7 +22,7 @@ public class registrationServlet extends HttpServlet {
 
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
 
             //first, check that the username is not present in the db users table
 
@@ -33,10 +33,8 @@ public class registrationServlet extends HttpServlet {
             ResultSet isTaken = usernameTaken.executeQuery();
 
             if(isTaken.next()){
-
-                request.setAttribute("usernameTaken", "Username already taken");
-                RequestDispatcher rd2 = request.getRequestDispatcher("homepage.jsp");
-                rd2.forward(request, response);
+                response.getWriter().print("Username already taken");
+                request.getRequestDispatcher("homepage.jsp").include(request, response);
 
             }else{
                 PreparedStatement registerUser = connection.prepareStatement("insert into users values(seq_user.nextval,?,?,?,?)");

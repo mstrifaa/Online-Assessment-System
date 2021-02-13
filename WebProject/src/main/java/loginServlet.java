@@ -14,12 +14,13 @@ public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("loginusername");
+        request.getParameterValues("loginusername");
         String password = request.getParameter("loginpassword");
 
 
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
 
             PreparedStatement verifyUser = connection.prepareStatement("select username from users where username=? and password=?");
 
@@ -28,9 +29,10 @@ public class loginServlet extends HttpServlet {
 
             ResultSet isVerified = verifyUser.executeQuery();
             if(!isVerified.next()){
-                request.setAttribute("incorrect","Username and/or password is incorrect.");
+                response.getWriter().print("Username and/or password is incorrect.");
                 RequestDispatcher rd1 = request.getRequestDispatcher("homepage.jsp");
                 rd1.forward(request, response);
+
             }else {
                 // login the user and start the session
                 HttpSession sessionL = request.getSession(); //will create a new session

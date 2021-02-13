@@ -20,16 +20,18 @@
                 box-sizing: border-box;
             }
             body{
-                background-image: radial-gradient(purple, mediumorchid);
+                background-image: radial-gradient(rgb(210, 137, 228), purple);
             }
 
             #firstPart{
                 height: auto;
+                background-color: rgb(210, 137, 228);
             }
 
             #secondPart{
                 /* height: 550px; */
                 /*background-color: greenyellow;*/
+                padding-top: 3rem;
             }
             #logo{
                 /*background-color: green;*/
@@ -47,7 +49,7 @@
             #leftPart, #registration{
                 display: inline-block;
                 width: 49%;
-                height: 100%;
+                height: auto;
             }
 
             .col-auto{
@@ -106,19 +108,9 @@
                     <input id="fullName" type="text" name="fullName" class="form-control">
                 </div>
 
-<%--                <div class="col-sm-10">--%>
-<%--                    <label for="institution">Institution</label>--%>
-<%--                    <input id="institution" type="text" name="institution" class="form-control"/>--%>
-<%--                </div>--%>
-
-<%--                <div class="col-sm-10">--%>
-<%--                    <label for="studentID">Student ID (Institutional Student Number) </label>--%>
-<%--                    <input id="studentID" type="number" name="studentID" class="form-control">--%>
-<%--                </div>--%>
-
                 <div class="col-sm-10">
                     <label for="username"> Username</label>
-                    <span style="color: grey;
+                    <span style="color: white;
                                  font-size: small;">(Username should have at least 8 characters)</span>
                     <input id="username" type="text" name="username" minlength="8" class="form-control" minlength="8">
                 </div>
