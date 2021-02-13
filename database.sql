@@ -17,3 +17,18 @@ CREATE SEQUENCE seq_user
         MINVALUE 1
         START WITH 1
         INCREMENT BY 1;
+
+create table quiz(
+	quizCode number primary key,
+	title varchar2(100),
+	description varchar2(500),
+	questions varchar2(4000) not null,
+	answers varchar2(2000),
+	userId number,
+	foreign key (userId) references users(id)
+);
+
+create sequence seq_quiz
+	minvalue 1000
+	start with 1000
+	increment by 10;
