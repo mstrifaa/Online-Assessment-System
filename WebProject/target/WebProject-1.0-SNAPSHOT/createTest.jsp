@@ -271,7 +271,7 @@
 
                 let q = {
                     question: qstn,
-                    option: opts
+                    options: opts
                 };
 
                 console.log(q);
@@ -309,6 +309,10 @@
                     $("#addQuestion").css("display", "none");
                     let confirmation = $("<p></p>").text(result);
                     $("body").append(confirmation);
+
+                    let res = JSON.parse(result);
+                     $("body").append(res);
+
 
                 }
             );

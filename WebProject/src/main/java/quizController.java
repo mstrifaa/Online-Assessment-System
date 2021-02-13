@@ -15,6 +15,8 @@ public class quizController extends HttpServlet {
             String answers = request.getParameter("answers");
             System.out.println(questions);
 
+            response.getWriter().print(questions);
+
 
 //            int i, j=0;
 //            char theQuestion[]= new char[1000];
