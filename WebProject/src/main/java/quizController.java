@@ -9,13 +9,14 @@ import java.sql.*;
 public class quizController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String title = request.getParameter("title");
-            String description = request.getParameter("description");
-            String questions = request.getParameter("questions");
+//            String title = request.getParameter("title");
+//            String description = request.getParameter("description");
+//            String questions = request.getParameter("questions");
+            String quiz = request.getParameter("quiz");
             String answers = request.getParameter("answers");
-            System.out.println(questions);
+            //System.out.println(questions);
 
-            response.getWriter().print(questions);
+            response.getWriter().print("Quiz created successfully!");
 
 
 //            int i, j=0;
@@ -79,14 +80,15 @@ public class quizController extends HttpServlet {
             // in an AJAX request from the students page.
             // using JavaScript, the questions are to be rendered in input fields.
 
-            PreparedStatement quiz = connection.prepareStatement("insert into quiz values (seq_quiz.nextval, ?,?,?,?,?)");
-            quiz.setString(1, title);
-            quiz.setString(2, description);
-            quiz.setString(3, questions);
-            quiz.setString(4, answers);
-            quiz.setInt(5, userId);
+            PreparedStatement quizz = connection.prepareStatement("insert into quiz values (seq_quiz.nextval, ?,?,?)");
+//            quizz.setString(1, title);
+//            quizz.setString(2, description);
+//            quizz.setString(3, questions);
+            quizz.setString(1, quiz);
+            quizz.setString(2, answers);
+            quizz.setInt(3, userId);
 
-            int rowsInserted = quiz.executeUpdate();
+            int rowsInserted = quizz.executeUpdate();
 
             //quiz = connection.prepareStatement("select quizCode from quiz where ");
 

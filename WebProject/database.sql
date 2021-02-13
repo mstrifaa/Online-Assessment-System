@@ -18,7 +18,7 @@ CREATE SEQUENCE seq_user
         START WITH 1
         INCREMENT BY 1;
 
-create table quiz(
+--create table quiz(
 	quizCode number primary key,
 	title varchar2(100),
 	description varchar2(500),
@@ -26,8 +26,16 @@ create table quiz(
 	answers varchar2(2000),
 	userId number,
 	foreign key (userId) references users(id)
-);
+);-- use kortesi na
 
+-- using this one instead--
+create table quiz(
+	quizCode number primary key,
+	quiz varchar2(4000),
+	answers varchar2(2000),
+	userId number,
+	foreign key (userId) references users(id)
+);
 create sequence seq_quiz
 	minvalue 1000
 	start with 1000

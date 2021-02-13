@@ -250,8 +250,7 @@
             const quizForm = {
                 title: testTitle,
                 description: testDesc,
-                questions:[],
-                answers: []
+                questions:[]
             };
             let qs = [];
             let anss = [];
@@ -277,30 +276,27 @@
                 console.log(q);
 
                 quizForm["questions"].push(q);
-                qs.push(q);
+                //qs.push(q);
             }
 
             // collecting answers
             for(let i=0; i<answers.length; i++){
                 anss.push(answers[i].value);
-                quizForm["answers"].push(answers[i].value);
+                //quizForm["answers"].push(answers[i].value);
             }
             console.log(qs);
 
             const qss = JSON.stringify(qs);
             const ans = JSON.stringify(anss);
 
-            //const quiz = JSON.stringify(quizForm);
+            const quiz = JSON.stringify(quizForm);
 
             //console.log(quiz);
 
             $.post('quizController',
                 {
-                    title: testTitle,
-                    description: testDesc,
-                    questions: qss,
-                    answers: ans
-
+                    quiz:quiz,
+                    answers:ans
                 },
 
                  function(result, status){

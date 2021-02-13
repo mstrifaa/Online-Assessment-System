@@ -16,17 +16,17 @@ public class takeTestController extends HttpServlet {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
 
-            PreparedStatement selectQuiz = connection.prepareStatement("select questions from quiz");
+            PreparedStatement selectQuiz = connection.prepareStatement("select quiz from quiz");
 
             //selectUser.setString(1, request.getSession().getAttribute("currentUser").toString());
 
             ResultSet rs = selectQuiz.executeQuery();
 
             rs.next();
-            String questions = rs.getString(1);
-            System.out.println(questions);
+            String quiz = rs.getString(1);
+            System.out.println(quiz);
 
-            response.getWriter().print(questions);
+            response.getWriter().print(quiz);
 
             System.out.println("questions sent");
 
