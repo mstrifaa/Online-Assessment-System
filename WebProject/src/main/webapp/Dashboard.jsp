@@ -14,7 +14,7 @@
         <!-- the dashboard-->
 
         <a href="./createTest.jsp">Create a test</a>
-        <a> take a test</a>
+        <a href="./takeTest.jsp"> take a test</a>
         <a> Show Statistics</a>
 
     </body>

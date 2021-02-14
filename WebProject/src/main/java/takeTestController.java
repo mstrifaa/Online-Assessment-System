@@ -12,11 +12,14 @@ import java.sql.ResultSet;
 public class takeTestController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        try {
+        try{
+            int quizCode = Integer.parseInt(request.getParameter("quizCode"));
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Rifaa023");
 
-            PreparedStatement selectQuiz = connection.prepareStatement("select quiz from quiz");
+            PreparedStatement selectQuiz = connection.prepareStatement("select quiz from quiz where quizCode=?");
+
+            selectQuiz.setInt(1, quizCode);
 
             //selectUser.setString(1, request.getSession().getAttribute("currentUser").toString());
 
