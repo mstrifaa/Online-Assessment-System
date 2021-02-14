@@ -20,26 +20,31 @@
                 box-sizing: border-box;
             }
             body{
-                background-image: radial-gradient(rgb(210, 137, 228), purple);
+                background-image: url("welcome.jpg");
+                overflow: hidden;
             }
 
             #firstPart{
                 height: auto;
-                background-color: rgb(210, 137, 228);
+                background-color: orange;
             }
 
             #secondPart{
                 /* height: 550px; */
                 /*background-color: greenyellow;*/
                 padding-top: 3rem;
+                color: white;
             }
             #logo{
                 /*background-color: green;*/
+                margin: -20px;
+                margin-left: 20px;
             }
             #logo, #loginForm{
                 display: inline-block;
                 width: 49%;
                 padding: 1%;
+                color: white;
             }
 
             /* #registration{
@@ -70,9 +75,10 @@
         </script>
     </head>
     <body>
+    <h2 style="text-align: center; color: white">Welcome to Examplify</h2>
     <div id="firstPart">
         <div id="logo">
-
+            <img  style="width: 100px; height: 80px" src="logo.png">
         </div>
 
         <form id="loginForm" method="POST" action="./loginServlet">
@@ -97,7 +103,7 @@
 
     <div id="secondPart">
         <div id="leftPart">
-            Welcome to E-test.....
+
         </div>
 
         <!-- <div id="rightPart"> -->
