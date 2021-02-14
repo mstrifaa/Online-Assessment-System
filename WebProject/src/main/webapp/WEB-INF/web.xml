@@ -26,6 +26,10 @@
         <servlet-name>takeTestController</servlet-name>
         <servlet-class>takeTestController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cookieServlet</servlet-name>
+        <servlet-name>cookieServlet</servlet-name>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
@@ -46,5 +50,9 @@
     <servlet-mapping>
         <servlet-name>takeTestController</servlet-name>
         <url-pattern>/takeTestController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cookieServlet</servlet-name>
+        <url-pattern>/cookieServlet</url-pattern>
     </servlet-mapping>
 </web-app>
