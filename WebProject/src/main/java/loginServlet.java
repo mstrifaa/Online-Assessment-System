@@ -58,10 +58,8 @@ public class loginServlet extends HttpServlet {
 
 
                 request.setAttribute("toastmsg","logged in successfully");
-//               response.sendRedirect("Products.jsp");
+                response.sendRedirect("Dashboard.jsp");
 
-                RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
-                rd.forward(request, response);
             }
 
             connection.close();
